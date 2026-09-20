@@ -18,7 +18,7 @@ const SelectedTechs = ({
         const updatedTechs = selectedTechs.filter(
             (techno) => techno.id !== technoId);
         toast.warn('Tech Removed', {
-position: "top-right",
+position: "bottom-right",
 autoClose: 5000,
 hideProgressBar: false,
 closeOnClick: false,
@@ -35,7 +35,7 @@ transition: Bounce,
     const handleRemoveAll = () => {
         setSelectedTechs([]);
         toast.warn('Stack Cleared', {
-position: "top-right",
+position: "bottom-right",
 autoClose: 5000,
 hideProgressBar: false,
 closeOnClick: false,
