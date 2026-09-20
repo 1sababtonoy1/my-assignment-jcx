@@ -12,7 +12,7 @@ const Technologies = ({technoPromise}:TechnoProps) => {
     return (
         <div className="container mx-auto">
             <div className="mb-10">
-    <h2 className="text-[48px] leading-[1.1] font-extrabold tracking-[-1.5px] text-[#11182F]">
+    <h2 className="text-[48px] leading-[1.1] font-extrabold text-[#11182F]">
         Explore the{" "}
         <span className="text-[#D642A6]">
             Technologies
