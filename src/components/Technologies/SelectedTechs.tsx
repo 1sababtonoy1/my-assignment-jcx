@@ -16,8 +16,7 @@ const SelectedTechs = ({
     // Remove one technology
     const handleRemove = (technoId: string) => {
         const updatedTechs = selectedTechs.filter(
-            (techno) => techno.id !== technoId
-        );
+            (techno) => techno.id !== technoId);
         toast.warn('Tech Removed', {
 position: "top-right",
 autoClose: 5000,
@@ -48,10 +47,10 @@ transition: Bounce,
 });
     };
 
-    // If no technologies are selected
+    // No technologies
     if (selectedTechs.length === 0) {
         return (
-            <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+            <div className="rounded-2xl border border-slate-200 bg-white p-5">
 
                 <h2 className="text-xl font-bold text-slate-900">
                     Your Stack
@@ -74,7 +73,7 @@ transition: Bounce,
     return (
         <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
 
-            {/* Header */}
+            
             <h2 className="text-xl font-bold text-slate-900">
                 Your Stack
             </h2>
@@ -84,40 +83,39 @@ transition: Bounce,
                 {selectedTechs.length !== 1 ? 's' : ''} Selected
             </p>
 
-            {/* Selected technologies */}
+            
             <div className="mt-5 space-y-2">
 
                 {selectedTechs.map((techno: Itechnolgies) => (
                     <div
-                        key={techno.id}
-                        className="flex items-center justify-between rounded-xl border-2 border-slate-200 px-4 py-3"
-                    >
+             key={techno.id}
+    className="flex items-center justify-between rounded-xl border-2 border-slate-200 px-4 py-3"
+         >
+                        
+ <div className="flex items-center gap-3">
 
-                        {/* Icon + information */}
-                        <div className="flex items-center gap-3">
+        <img
+            src={techno.icon}
+            alt={techno.name}
+            className="h-9 w-9 object-contain"
+         />
 
-                            <img
-                                src={techno.icon}
-                                alt={techno.name}
-                                className="h-9 w-9 object-contain"
-                            />
+         <div>
+        <h2 className="text-base font-bold text-slate-900">
+         {techno.name}
+        </h2>
 
-                            <div>
-                                <h2 className="text-base font-bold text-slate-900">
-                                    {techno.name}
-                                </h2>
+         <p className="text-xs font-medium text-slate-400">
+             {techno.category}
+             </p>
+            </div>
 
-                                <p className="text-xs font-medium text-slate-400">
-                                    {techno.category}
-                                </p>
-                            </div>
+        </div>
 
-                        </div>
-
-                        {/* Remove individual technology */}
-                        <button
-                            onClick={() => handleRemove(techno.id)}
-                            className="cursor-pointer text-3xl text-slate-400 transition hover:text-red-500"
+                {/* Remove individual technology */}
+                 <button
+                     onClick={() => handleRemove(techno.id)}
+                className="cursor-pointer text-3xl text-slate-400 transition hover:text-red-500"
                         >
                             <RxCross2 />
                         </button>
