@@ -9,8 +9,7 @@ const TechnoCard = ({
 }: {
     techno: Itechnolgies;
     selectedTechs: Itechnolgies[];
-    setSelectedTechs: React.Dispatch<
-        React.SetStateAction<Itechnolgies[]>
+    setSelectedTechs: React.Dispatch<React.SetStateAction<Itechnolgies[]>
     >;
 }) => {
 
@@ -20,13 +19,10 @@ const TechnoCard = ({
             (tech) => tech.id === techno.id
         ) !== -1;
 
-
     const handleAdd = () => {
-
         if (isSelected) {
             return;
         }
-
         setSelectedTechs([
             ...selectedTechs,
             techno
@@ -112,9 +108,8 @@ const TechnoCard = ({
                         : "cursor-pointer bg-slate-950 hover:bg-slate-800"
                 }`}
             >
-                {isSelected
-                    ? "Added to Stack"
-                    : "Add to Stack"
+                {
+                isSelected? "Added to Stack": "Add to Stack"
                 }
             </button>
 
