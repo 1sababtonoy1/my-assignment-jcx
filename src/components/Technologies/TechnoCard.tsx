@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Itechnolgies } from '../../types.tsx/technology';
-import { toast } from 'react-toastify';
+import { Bounce, toast } from 'react-toastify';
 
 const TechnoCard = ({
     techno,
@@ -28,7 +28,17 @@ const TechnoCard = ({
             techno
         ]);
 
-        toast.success("Added to Stack!");
+        toast.success('Added to Stack', {
+position: "bottom-right",
+autoClose: 5000,
+hideProgressBar: false,
+closeOnClick: false,
+pauseOnHover: true,
+draggable: true,
+progress: undefined,
+theme: "light",
+transition: Bounce,
+});
     };
 
 
